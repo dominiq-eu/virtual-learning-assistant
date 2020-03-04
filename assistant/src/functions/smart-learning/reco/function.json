@@ -1,0 +1,18 @@
+{
+    "sentences": {
+        "de": [
+            "Was empfiehlst du mir?",
+            "Was kannst du mir empfehlen?",
+            "Was sollte ich als nächstes machen?",
+            "Was sollte ich als nächstes lernen?",
+            "Welches Modul sollte ich lernen?",
+            "Was kommt als nächstes?",
+            "/reco"
+        ],
+        "en": [
+            "Can you recommend something?",
+            "What should I learn?",
+            "What's next?"
+        ]
+    }
+}

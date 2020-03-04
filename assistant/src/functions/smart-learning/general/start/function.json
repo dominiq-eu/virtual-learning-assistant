@@ -1,0 +1,7 @@
+{
+    "trigger": "nlp",
+    "sentences": {
+        "de": ["/start"],
+        "en": ["/start"]
+    }
+}

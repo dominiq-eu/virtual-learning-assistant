@@ -1,0 +1,69 @@
+{
+    "name": "@fntk/service",
+    "version": "1.0.0",
+    "description": "Lightweight faas architecture for web-services in javascript",
+    "repository": "",
+    "author": "Dj <190334+pimml@users.noreply.github.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com",
+        "email": "190334+pimml@users.noreply.github.com"
+    },
+    "main": "dist/index.js",
+    "bin": {
+        "jsfn": "dist/jsfn.js"
+    },
+    "eslintConfig": {
+        "env": {
+            "es6": true
+        },
+        "plugins": [
+            "fp"
+        ],
+        "extends": "plugin:fp/recommended",
+        "rules": {
+            "fp/no-this": "warn",
+            "fp/no-mutating-methods": "warn",
+            "fp/no-unused-expression": [
+                "warn",
+                {
+                    "allowUseStrict": true
+                }
+            ],
+            "fp/no-mutation": [
+                "warn",
+                {
+                    "commonjs": true,
+                    "allowThis": true
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "build": "parcel build src/index.js --target node --no-cache --detailed-report",
+        "bundle": "parcel build src/index.js --target node --no-cache --detailed-report --no-minify",
+        "watch": "parcel watch src/index.js --target node --no-cache",
+        "test": "eslint src/",
+        "precommit": "yarn test && pretty-quick --staged"
+    },
+    "dependencies": {
+        "@fntk/types": "https://github.com/pimml/fntk-types",
+        "@fntk/utils": "https://github.com/pimml/fntk-utils",
+        "body-parser": "^1.18.3",
+        "compression": "^1.7.3",
+        "express": "^4.16.3",
+        "natural": "^0.6.1",
+        "nlp-toolkit": "^0.2.6",
+        "snowball": "^0.3.1",
+        "stopwords-iso": "^0.4.0",
+        "telebot": "^1.2.6"
+    },
+    "devDependencies": {
+        "eslint": "^5.4.0",
+        "eslint-plugin-fp": "^2.3.0",
+        "husky": "^0.14.3",
+        "parcel-bundler": "^1.9.7",
+        "prettier": "^1.14.2",
+        "pretty-quick": "^1.6.0"
+    }
+}

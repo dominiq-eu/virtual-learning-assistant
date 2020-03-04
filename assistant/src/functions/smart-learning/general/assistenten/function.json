@@ -1,0 +1,7 @@
+{
+    "trigger": "nlp",
+    "sentences": {
+        "de": ["Ok, Google", "Hey Siri", "Cortana", "Alexa"],
+        "en": ["Ok, Google", "Hey Siri", "Cortana", "Alexa"]
+    }
+}

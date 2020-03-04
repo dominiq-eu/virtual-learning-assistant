@@ -1,0 +1,62 @@
+{
+    "name": "va",
+    "version": "1.0.0",
+    "description": "Virtual Learning Assistant",
+    "repository": "https://git.dominiq.eu/",
+    "author": "",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "eslintConfig": {
+        "env": {
+            "es6": true
+        },
+        "plugins": [
+            "fp"
+        ],
+        "extends": "plugin:fp/recommended",
+        "rules": {
+            "fp/no-this": "warn",
+            "fp/no-mutating-methods": "warn",
+            "fp/no-unused-expression": [
+                "warn",
+                {
+                    "allowUseStrict": true
+                }
+            ],
+            "fp/no-mutation": [
+                "warn",
+                {
+                    "commonjs": true,
+                    "allowThis": true
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "start": "cd src && node app.js",
+        "start-jsfn": "yarn build && cd dist && jsfn",
+        "start-docker": "yarn build && docker-compose up",
+        "build": "babel src/ --out-dir dist/",
+        "watch": "concurrently --kill-others 'nodemon --exec \"babel src/ --out-dir dist/\" --watch src/' 'nodemon --delay 3 dist/index.js --watch dist/'",
+        "test": "eslint src",
+        "precommit": "yarn test &&pretty-quick --staged"
+    },
+    "dependencies": {
+        "@fntk/service": "https://github.com/pimml/fntk-service",
+        "@fntk/types": "https://github.com/pimml/fntk-types",
+        "@fntk/utils": "https://github.com/pimml/fntk-utils",
+        "isomorphic-fetch": "^2.2.1",
+        "middleware-api": "https://gitlab.fokus.fraunhofer.de/slhw/middleware-api.git"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "concurrently": "^3.6.0",
+        "eslint": "^5.4.0",
+        "eslint-plugin-fp": "^2.3.0",
+        "husky": "^0.14.3",
+        "nodemon": "^1.18.1",
+        "prettier": "^1.13.7",
+        "pretty-quick": "^1.6.0"
+    }
+}

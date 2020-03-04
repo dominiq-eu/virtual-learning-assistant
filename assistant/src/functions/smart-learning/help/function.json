@@ -1,0 +1,12 @@
+{
+    "trigger": "nlp",
+    "sentences": {
+        "de": [
+            "/hilfe",
+            "Kannst du mir helfen?",
+            "Ich brauche hilfe",
+            "Hilfe!"
+        ],
+        "en": ["/help", "Can you help me?", "I need help", "Help!"]
+    }
+}

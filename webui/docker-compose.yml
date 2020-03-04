@@ -1,0 +1,16 @@
+# https://docs.docker.com/compose/compose-file/
+version: '2.0'
+
+services:
+    lti:
+        image: node:8-alpine
+        entrypoint: /app/run.sh
+        ports:
+            - '7000:7000'
+        volumes:
+            - ./:/app
+
+networks:
+    default:
+        external:
+            name: web

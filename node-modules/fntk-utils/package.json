@@ -1,0 +1,59 @@
+{
+    "name": "@fntk/utils",
+    "version": "1.0.0",
+    "description": "Tools to make the functional life with JavaScript easier.",
+    "repository": "https://github.com/pimml/fntk-utils.git",
+    "author": "Dj <190334+pimml@users.noreply.github.com>",
+    "license": "MIT",
+    "keywords": [
+        "utils",
+        "pipe"
+    ],
+    "bugs": {
+        "url": "https://github.com/pimml/fntk-utils/issues",
+        "email": "190334+pimml@users.noreply.github.com"
+    },
+    "eslintConfig": {
+        "env": {
+            "es6": true
+        },
+        "plugins": [
+            "fp"
+        ],
+        "extends": "plugin:fp/recommended",
+        "rules": {
+            "fp/no-this": "warn",
+            "fp/no-mutating-methods": "warn",
+            "fp/no-unused-expression": [
+                "warn",
+                {
+                    "allowUseStrict": true
+                }
+            ],
+            "fp/no-mutation": [
+                "warn",
+                {
+                    "commonjs": true,
+                    "allowThis": true
+                }
+            ]
+        }
+    },
+    "main": "dist/utils.js",
+    "scripts": {
+        "build": "parcel build src/utils.js --no-cache --detailed-report",
+        "bundle": "parcel build src/utils.js --no-cache --no-minify --detailed-report",
+        "watch": "parcel watch src/utils.js --no-cache",
+        "test": "eslint src",
+        "precommit": "yarn test && pretty-quick --staged"
+    },
+    "devDependencies": {
+        "eslint": "^5.4.0",
+        "eslint-plugin-fp": "^2.3.0",
+        "husky": "^0.14.3",
+        "parcel-bundler": "^1.9.7",
+        "prettier": "^1.14.2",
+        "pretty-quick": "^1.6.0"
+    },
+    "dependencies": {}
+}

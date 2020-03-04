@@ -1,0 +1,63 @@
+{
+    "name": "middleware-api",
+    "version": "1.0.0",
+    "description": "Make beuth middleware api usable from JavaScript",
+    "repository": "https://gitlab.fokus.fraunhofer.de/dju/middleware-api.git",
+    "author": "Dominique Juergensen <dominique.juergensen@fokus.fraunhofer.de>",
+    "license": "MIT",
+    "keywords": [
+        "beuth",
+        "middleware"
+    ],
+    "bugs": {
+        "url": "https://gitlab.fokus.fraunhofer.de/dju/middleware-api/issues",
+        "email": "dominique.juergensen@fokus.fraunhofer.de"
+    },
+    "main": "dist/index.js",
+    "eslintConfig": {
+        "env": {
+            "es6": true
+        },
+        "plugins": [
+            "fp"
+        ],
+        "extends": "plugin:fp/recommended",
+        "rules": {
+            "fp/no-this": "warn",
+            "fp/no-mutating-methods": "warn",
+            "fp/no-unused-expression": [
+                "warn",
+                {
+                    "allowUseStrict": true
+                }
+            ],
+            "fp/no-mutation": [
+                "warn",
+                {
+                    "commonjs": true,
+                    "allowThis": true
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "build": "parcel build src/index.js --no-cache --detailed-report",
+        "bundle": "parcel build src/index.js --no-cache --no-minify --detailed-report",
+        "watch": "parcel watch src/index.js --no-cache",
+        "test": "eslint src",
+        "precommit": "yarn test && pretty-quick --staged"
+    },
+    "devDependencies": {
+        "eslint": "^5.4.0",
+        "eslint-plugin-fp": "^2.3.0",
+        "husky": "^0.14.3",
+        "parcel-bundler": "^1.9.7",
+        "prettier": "^1.14.2",
+        "pretty-quick": "^1.6.0"
+    },
+    "dependencies": {
+        "@fntk/types": "https://github.com/pimml/fntk-types",
+        "@fntk/utils": "https://github.com/pimml/fntk-utils",
+        "isomorphic-fetch": "^2.2.1"
+    }
+}
