@@ -51,7 +51,7 @@
         "@fntk/utils": "https://github.com/pimml/fntk-utils",
         "body-parser": "^1.18.3",
         "compression": "^1.7.3",
-        "express": "^4.16.3",
+        "express": "^4.17.3",
         "natural": "^0.6.1",
         "nlp-toolkit": "^0.2.6",
         "snowball": "^0.3.1",
